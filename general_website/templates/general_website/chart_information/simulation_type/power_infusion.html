@@ -1,0 +1,339 @@
+{% load i18n %}
+<h5>Power Infusion</h5>
+<p>
+    This chart shows how much power each spec gains from getting access to one <a
+        href="https://www.wowhead.com/spell=10060/power-infusion">Power Infusion</a> cast by a Priest in their
+    group.
+</p>
+<p>
+    ATTENTION: APL support for <a href="https://www.wowhead.com/spell=10060/power-infusion">Power Infusion</a> is not
+    wide spread. Please submit improvements to the Action Priority
+    List (APL) in SimulationCraft.
+</p>
+<p>
+    It uses the "tier appropriate"
+    <a href="https://github.com/simulationcraft/simc/tree/midnight/profiles">SimulationCraft profile</a>.
+</p>
+
+<pre>
+# SimulatonCraft example override
+## External Power Infusion
+external_buffs.pool=power_infusion:120:1
+
+## No external Power Infusion
+external_buffs.pool=power_infusion:120:0
+
+## Example APL line
+actions+=/invoke_external_buff,name=power_infusion,if=buff.dancing_rune_weapon.up|!talent.dancing_rune_weapon
+</pre>
+
+<p>
+    See the <a href="https://github.com/simulationcraft/simc/wiki/ActionLists#external-buffs">SimulationCraft Wiki</a>
+    for more information on how to set up your spec support.
+</p>
+
+<h5>When to use</h5>
+
+<!-- auto generated power infusion section start -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Spec</th>
+            <th scope="col">Explanation</th>
+            <th scope="col">Last explanation update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Death_Knight_Blood.simc">Blood
+                    Death Knight</a></th>
+            <td>No APL support.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Death_Knight_Frost.simc">Frost
+                    Death Knight</a></th>
+            <td> Use <a href='https://www.wowhead.com/spell=10060/power-infusion'>Power Infusion</a> while <a
+                    href='https://www.wowhead.com/spell=51271/pillar-of-frost'>Pillar of Frost</a> is up</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Death_Knight_Unholy.simc">Unholy
+                    Death Knight</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Demon_Hunter_Havoc.simc">Havoc
+                    Demon Hunter</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Demon_Hunter_Vengeance.simc">Vengeance
+                    Demon Hunter</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Druid_Balance.simc">Balance
+                    Druid</a></th>
+            <td> Line needed to enable sims using Power Infusion</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Druid_Feral.simc">Feral
+                    Druid</a></th>
+            <td> Line up <a href='https://www.wowhead.com/spell=10060/power-infusion'>Power Infusion</a> with <a
+                    href='https://www.wowhead.com/spell=106951/berserk'>Berserk</a>.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Druid_Guardian.simc">Guardian
+                    Druid</a></th>
+            <td>No APL support.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Evoker_Devastation.simc">Devastation
+                    Evoker</a></th>
+            <td> Invoke External Power Infusions if they're available during dragonrage</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Hunter_Beast_Mastery.simc">Beast_Mastery
+                    Hunter</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Hunter_Marksmanship.simc">Marksmanship
+                    Hunter</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Hunter_Survival.simc">Survival
+                    Hunter</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Mage_Arcane.simc">Arcane
+                    Mage</a></th>
+            <td> Invoke Externals with cooldowns except Autumn which should come just after cooldowns</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Mage_Fire.simc">Fire
+                    Mage</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Mage_Frost.simc">Frost
+                    Mage</a></th>
+            <td> Externals</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Monk_Brewmaster.simc">Brewmaster
+                    Monk</a></th>
+            <td>No APL support.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Monk_Windwalker.simc">Windwalker
+                    Monk</a></th>
+            <td> Use <a href='https://www.wowhead.com/spell=10060/power-infusion'>Power Infusion</a> while <a
+                    href='https://www.wowhead.com/spell=123904/invoke-xuen-the-white-tiger'>Invoke Xuen, the White
+                    Tiger</a> is active.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Paladin_Protection.simc">Protection
+                    Paladin</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Paladin_Retribution.simc">Retribution
+                    Paladin</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Priest_Shadow.simc">Shadow
+                    Priest</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Rogue_Assassination.simc">Assassination
+                    Rogue</a></th>
+            <td> Invoke Externals to Deathmark</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Rogue_Outlaw.simc">Outlaw
+                    Rogue</a></th>
+            <td>No APL support.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Rogue_Subtlety.simc">Subtlety
+                    Rogue</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Shaman_Elemental.simc">Elemental
+                    Shaman</a></th>
+            <td> Use Power Infusion on Cooldown.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Shaman_Enhancement.simc">Enhancement
+                    Shaman</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Warlock_Affliction.simc">Affliction
+                    Warlock</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Warlock_Demonology.simc">Demonology
+                    Warlock</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Warlock_Destruction.simc">Destruction
+                    Warlock</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Warrior_Arms.simc">Arms
+                    Warrior</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Warrior_Fury.simc">Fury
+                    Warrior</a></th>
+            <td>APL support exists but an explanation text is missing.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><a
+                    href="https://github.com/simulationcraft/simc/blob/thewarwithin/profiles/TWW3/TWW3_Warrior_Protection.simc">Protection
+                    Warrior</a></th>
+            <td>No APL support.</td>
+            <td>2025-09-06 <a
+                    href="https://github.com/simulationcraft/simc/commit/b62200f024ca0f1af44ea3e6483dd2d612bc7346">#b62200f0</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- auto generated power infusion section end -->
+
+<p>
+    The above information was extracted from SimulationCraft APL comments. Add a comment to the <a
+        href="https://github.com/simulationcraft/simc/wiki/ActionLists#external-buffs">external cooldown</a>
+    <a href="https://www.wowhead.com/spell=10060/power-infusion">Power Infusion</a> line to enable your explanation to
+    appear here.
+</p>

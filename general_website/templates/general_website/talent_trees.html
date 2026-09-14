@@ -1,0 +1,40 @@
+{% extends 'general_website/layout/base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+<h1 class="display-4 mb-3 text-center" id="primary_headline">{% translate "Talent trees" %}</h1>
+
+<div class="alert alert-warning" role="alert">
+    Wrong or missing icon? <a href="https://github.com/Bloodmallet/bloodmallet_web_frontend/issues">Report it!</a>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="row text-center" id="spec_table"></div>
+</div>
+
+<h2 id="btt-talent-tree-title" style="padding-top: 7vh;"></h2>
+<div class="btt-container mb-5">
+    <div id="btt-class-tree" class="bloodmallets-talent-tree mb-5" data-wow-class="" data-wow-spec=""
+        data-tree-type="class">
+    </div>
+    <div id="btt-spec-tree" class="bloodmallets-talent-tree mb-5" data-wow-class="" data-wow-spec=""
+        data-tree-type="spec">
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extraimport %}
+<script src="{% static 'general_website/js/talent_trees.js' %}"></script>
+
+<script src="{% static 'general_website/js/classes_specs.js' %}"></script>
+<script src="{% static 'general_website/js/talent_tree_class_spec_table.js' %}"></script>
+{% include 'general_website/layout/wowhead_tooltips.html' %}
+
+
+<link rel="stylesheet" href="{% static 'general_website/css/talent_trees.css' %}" />
+
+{% endblock %}

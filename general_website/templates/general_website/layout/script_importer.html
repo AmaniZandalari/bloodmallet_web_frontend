@@ -1,18 +1,18 @@
 {% load static %}
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    crossorigin="anonymous"></script>
+<!-- integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" -->
 <script src="{% static 'general_website/js/bootstrap.min.js' %}"></script>
 
 {# Allows drop down forms to be clicked within a drop down menu #}
-<script src="{% static 'general_website/js/top_nav_fix.js' %}"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102757416-2"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7XD8YX5F6"></script>
 <script>
-    let GA_ID = 'UA-102757416-2';
+    let GA_ID = 'G-H7XD8YX5F6';
     // Show info box if ga-disable cookie was not set
-    window.onload = function() {
+    window.onload = function () {
         if (document.cookie.indexOf('ga-disable-' + GA_ID) === -1) {
             document.getElementById('cookie_information_overlay').hidden = false;
             document.getElementById('cookie_information_box').hidden = false;
@@ -26,7 +26,7 @@
     }
 
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
 
     // gtag does not start if the disable-ga-ID window value is set to true
     function activateGA() {

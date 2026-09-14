@@ -1,4 +1,6 @@
-// let debug = true;
+if (typeof debug === 'undefined') {
+    var debug = false;
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     if (debug) {
@@ -44,16 +46,100 @@ function build_table() {
             div_spec_row.className = 'row';
             div_class_cell.appendChild(div_spec_row);
             let a_spec_btn = document.createElement('a');
+            let snake_case = wow_class + "_" + wow_spec;
             // It's a simulated spec
-            if (["demon_hunter_havoc", "druid_feral", "hunter_beast_mastery", "hunter_marksmanship", "hunter_survival", "priest_shadow", "shaman_elemental", "shaman_enhancement", "warrior_arms", "warrior_fury"].indexOf(wow_class + "_" + wow_spec) > -1) {
+            if ([
+                "death_knight_blood",
+                "death_knight_frost",
+                "death_knight_unholy",
+                // "demon_hunter_havoc",
+                "demon_hunter_vengeance",
+                // "demon_hunter_devourer",
+                // "druid_balance",
+                // "druid_feral",
+                // "druid_guardian",
+                // "evoker_devastation",
+                // "evoker_preservation",
+                // "evoker_augmentation",
+                "hunter_beast_mastery",
+                "hunter_marksmanship",
+                "hunter_survival",
+                "mage_arcane",
+                "mage_fire",
+                "mage_frost",
+                "monk_brewmaster",
+                // "monk_windwalker",
+                "paladin_protection",
+                // "paladin_retribution",
+                "priest_shadow",
+                "rogue_assassination",
+                "rogue_outlaw",
+                "rogue_subtlety",
+                "shaman_elemental",
+                "shaman_enhancement",
+                "warlock_affliction",
+                "warlock_demonology",
+                "warlock_destruction",
+                // "warrior_arms",
+                // "warrior_fury",
+                "warrior_protection"
+            ].indexOf(snake_case) > -1) {
                 a_spec_btn.className = 'spec-btn ' + wow_class + '-button col-12 translate_' + wow_spec;
-                a_spec_btn.href = 'https://bfa.bloodmallet.com/index.html#' + wow_class + '_' + wow_spec;
+                a_spec_btn.href = '/chart/' + wow_class + '/' + wow_spec + '/trinkets/castingpatchwerk';
+            } else if ([
+                // "death_knight_blood",
+                // "death_knight_frost",
+                // "death_knight_unholy",
+                // "demon_hunter_havoc",
+                // "demon_hunter_vengeance",
+                // "demon_hunter_devourer",
+                // "druid_balance",
+                // "druid_feral",
+                // "druid_restoration",
+                // "druid_guardian",
+                // "evoker_devastation",
+                // "evoker_preservation",
+                // "evoker_augmentation",
+                // "hunter_beast_mastery",
+                // "hunter_marksmanship",
+                // "hunter_survival",
+                // "mage_arcane",
+                // "mage_fire",
+                // "mage_frost",
+                // "monk_brewmaster",
+                // "monk_mistweaver",
+                // "monk_windwalker",
+                // "paladin_protection",
+                // "paladin_retribution",
+                // "paladin_holy",
+                // "priest_shadow",
+                // "priest_discipline",
+                // "rogue_assassination",
+                // "rogue_outlaw",
+                // "rogue_subtlety",
+                // "shaman_elemental",
+                // "shaman_enhancement",
+                // "shaman_restoration",
+                // "warlock_affliction",
+                // "warlock_demonology",
+                // "warlock_destruction",
+                // "warrior_arms",
+                // "warrior_fury",
+                // "warrior_protection"
+            ].indexOf(snake_case) > -1) {
+                a_spec_btn.className = 'spec-btn ' + wow_class + '-button col-12 translate_' + wow_spec + ' btn-disabled';
+                a_spec_btn.href = '';
+                a_spec_btn.setAttribute("data-type", "bm-tooltip");
+                a_spec_btn.setAttribute("data-bm-tooltip-text", "Pre-patch is not supported.");
+                a_spec_btn.setAttribute("data-bm-tooltip-placement", "top");
             } else {
                 a_spec_btn.className = 'spec-btn ' + wow_class + '-button col-12 translate_' + wow_spec + ' btn-disabled';
                 a_spec_btn.href = '';
-                a_spec_btn.dataset.toggle = "tooltip";
-                a_spec_btn.dataset.placement = "top";
-                a_spec_btn.dataset.title = "Disabled until a prepatch profile is provided.";
+                a_spec_btn.setAttribute("data-type", "bm-tooltip");
+                // a_spec_btn.title = "Missing SimulationCraft profile or lack of dps support for the spec.";
+                // a_spec_btn.setAttribute("data-bm-tooltip-text", "Missing SimulationCraft profile or lack of dps support for the spec.");
+                a_spec_btn.setAttribute("data-bm-tooltip-text", "Missing SimulationCraft profile for the current season.");
+                a_spec_btn.setAttribute("data-bm-tooltip-placement", "top");
             }
 
             a_spec_btn.innerHTML = capitalize_first_letters(wow_spec).replace("_", " ");
@@ -61,7 +147,7 @@ function build_table() {
         }
         table.appendChild(div_class_cell);
     }
-    $('[data-toggle="tooltip"]').tooltip();
+    bm_register_tooltips();
 }
 
 

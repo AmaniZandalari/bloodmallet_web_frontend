@@ -1,0 +1,317 @@
+/* btt - Bloodmallets Talent Trees */
+
+:root {
+    --btt-icon-size: 35px;
+    --line-strength: 2px;
+
+    /* 9+2 to incorporate a free starting and end column */
+    --btt-talent-columns: 11;
+    --btt-talent-rows: 10;
+
+    /* talent selection colour */
+    --btt-not-selected: darkgrey;
+    --btt-selectable: turquoise;
+    --btt-partially-selected: yellow;
+    --btt-fully-selected: orange;
+
+    --icon-gap: calc(var(--btt-icon-size) / 3);
+    --icon-effective-size: calc(var(--btt-icon-size) * 1.2);
+    --tree-width: calc(var(--btt-talent-columns) * var(--icon-effective-size) + calc(var(--btt-talent-columns) - 1) * var(--icon-gap))
+}
+
+div.btt-container {
+    width: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--tree-width), 1fr));
+}
+
+div.bloodmallets-talent-tree {
+    width: 100%;
+    text-align: center;
+}
+
+div.bloodmallet-talents {
+    width: var(--tree-width);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+
+    display: grid;
+    /* grid-template: ; */
+    grid-template-columns: repeat(var(--btt-talent-columns), var(--icon-effective-size));
+    grid-template-rows: repeat(var(--btt-talent-rows), var(--icon-effective-size));
+    row-gap: var(--icon-gap);
+    column-gap: var(--icon-gap);
+}
+
+div.bloodmallet-import-export-row {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: var(--tree-width);
+}
+
+input.bloodmallet-paste::placeholder {
+    text-align: center;
+}
+
+div.bloodmallet-talents>div.btt-talent {
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    cursor: pointer;
+    z-index: 500;
+    /* TODO: remove me */
+    /* border: 1px solid black; */
+}
+
+div.btt-talent>div.btt-talent-rank {
+    position: absolute;
+    width: 100%;
+    bottom: -7px;
+    left: 0px;
+    /* right: 0px; */
+    text-align: center;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    /* offset-x | offset-y | blur-radius | color */
+}
+
+.btt-text-shadow {
+    text-shadow: -1px 0 2px black, 0 1px 2px black, 1px 0 2px black, 0 -1px 2px black;
+}
+
+.btt-selectable {
+    color: var(--btt-selectable);
+    stroke: var(--btt-selectable);
+}
+
+.btt-not-selected {
+    color: var(--btt-not-selected);
+    stroke: var(--btt-not-selected);
+}
+
+.btt-partially-selected {
+    color: var(--btt-partially-selected);
+    stroke: var(--btt-not-selected);
+}
+
+.btt-fully-selected {
+    color: var(--btt-fully-selected);
+    stroke: var(--btt-fully-selected);
+}
+
+.btt-selectable .btt-icon {
+    background-color: var(--btt-selectable);
+    /* filter: grayscale(100%); */
+}
+
+.btt-not-selected .btt-icon {
+    background-color: var(--btt-not-selected);
+    filter: grayscale(100%);
+}
+
+.btt-partially-selected .btt-icon {
+    background-color: var(--btt-partially-selected);
+}
+
+.btt-fully-selected .btt-icon {
+    background-color: var(--btt-fully-selected);
+}
+
+
+.btt-svg {
+    width: 100%;
+    height: 100%;
+    grid-row-start: 1;
+    grid-row-end: calc(var(--btt-talent-rows) + 1);
+    grid-column-start: 1;
+    grid-column-end: calc(var(--btt-talent-columns) + 1);
+}
+
+.btt-talent-connector {
+    stroke-width: var(--line-strength);
+}
+
+/* https://stackoverflow.com/questions/31854185/how-to-add-border-in-my-clip-path-polygon-css-style */
+.btt-icon {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(var(--btt-icon-size) + 2 * var(--line-strength));
+    height: calc(var(--btt-icon-size) + 2 * var(--line-strength));
+    box-sizing: border-box;
+}
+
+.btt-icon img {
+    position: absolute;
+    top: var(--line-strength);
+    /* equal to border thickness */
+    left: var(--line-strength);
+    /* equal to border thickness */
+    width: var(--btt-icon-size);
+    /* container height - (border thickness * 2) */
+    height: var(--btt-icon-size);
+    /* container height - (border thickness * 2) */
+}
+
+.btt-circle,
+.btt-circle img {
+    -webkit-clip-path: circle(50%);
+    clip-path: circle(50%);
+}
+
+.btt-square,
+.btt-square img {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+}
+
+.btt-octagon,
+.btt-octagon img {
+    -webkit-clip-path: polygon(29% 0%, 71% 0%, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0% 71%, 0% 29%, 29% 0%);
+    clip-path: polygon(29% 0%, 71% 0%, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0% 71%, 0% 29%, 29% 0%);
+}
+
+.btt-octagon-left,
+.btt-octagon-left img {
+    -webkit-clip-path: polygon(29% 0%, 50% 0%, 50% 100%, 29% 100%, 0% 71%, 0% 29%, 29% 0%);
+    clip-path: polygon(29% 0%, 50% 0%, 50% 100%, 29% 100%, 0% 71%, 0% 29%, 29% 0%);
+}
+
+.btt-octagon-right,
+.btt-octagon-right img {
+    -webkit-clip-path: polygon(50% 0%, 71% 0%, 100% 29%, 100% 71%, 71% 100%, 50% 100%, 50% 0%);
+    clip-path: polygon(50% 0%, 71% 0%, 100% 29%, 100% 71%, 71% 100%, 50% 100%, 50% 0%);
+}
+
+.btt-choice-visual-left::before,
+.btt-choice-visual-right::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    border-top: calc(var(--btt-icon-size) / 6) solid transparent;
+    border-bottom: calc(var(--btt-icon-size) / 6) solid transparent;
+    z-index: inherit;
+
+}
+
+.btt-choice-visual-left::before {
+    /* left: 0px; */
+    transform: translate(calc(-100% - var(--icon-effective-size) / 2), -50%);
+    border-right: calc(var(--btt-icon-size) / 5) solid var(--btt-partially-selected);
+}
+
+.btt-choice-visual-right::after {
+    /* right: 0px; */
+    transform: translate(calc(0% + var(--icon-effective-size) / 2 + 1px), -50%);
+    border-left: calc(var(--btt-icon-size) / 5) solid var(--btt-partially-selected);
+}
+
+.btt-not-selected.btt-choice-visual-left::before,
+.btt-not-selected.btt-choice-visual-right::after {
+    border-left-color: var(--btt-not-selected);
+    border-right-color: var(--btt-not-selected);
+}
+
+.btt-partially-selected::before,
+.btt-partially-selected::after,
+.btt-selectable::before,
+.btt-selectable::after {
+    border-left-color: var(--btt-selectable);
+    border-right-color: var(--btt-selectable);
+}
+
+.btt-fully-selected::before,
+.btt-fully-selected::after {
+    border-left-color: var(--btt-fully-selected);
+    border-right-color: var(--btt-fully-selected);
+}
+
+.btt-talent-name {
+    color: var(--btt-fully-selected);
+    font-weight: 700;
+}
+
+.btt-choice-name {
+    color: lightskyblue;
+}
+
+.btt-talent-description {}
+
+.tooltip>.tooltip-inner {
+    text-align: left;
+}
+
+.btt-gate-line:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 13%;
+    border-top: 2px solid white;
+    width: 79%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.btt-gate-line-satisfied:before {
+    border-top: 0px dashed var(--btt-not-selected);
+}
+
+.btt-gate-value {
+    height: 100%;
+    z-index: 200;
+    position: relative;
+}
+
+.btt-gate-pre-5 {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: calc(var(--btt-talent-columns) + 1);
+    position: relative;
+}
+
+.btt-gate-pre-9 {
+    grid-row-start: 7;
+    grid-row-end: 9;
+    grid-column-start: 1;
+    grid-column-end: calc(var(--btt-talent-columns) + 1);
+    position: relative;
+}
+
+.btt-vertical-align-center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+/* --------------- */
+/* Styling tooltip */
+/* --------------- */
+
+.wowhead-tooltip .wowhead-tooltip-requirements {
+    display: none;
+}
+
+/* remove icon left to the tooltip */
+.whtt-tooltip-icon {
+    display: none;
+}
+
+.wowhead-tooltip td,
+.wowhead-tooltip th {
+    background: none;
+}
+
+.wowhead-tooltip {
+    background: #232227;
+    border: 1px solid #999999 !important;
+}
